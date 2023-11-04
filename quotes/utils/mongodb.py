@@ -3,7 +3,7 @@ from pymongo import MongoClient
 
 
 config = configparser.ConfigParser()
-config.read('config.ini')
+config.read('utils/config.ini')
 
 mongo_user = config.get('DB', 'user')
 mongodb_pass = config.get('DB', 'pass')
@@ -14,3 +14,4 @@ def get_mongodb():
     client = MongoClient(f'mongodb+srv://{mongo_user}:{mongodb_pass}@{domain}/{db_name}?retryWrites=true&w=majority')
     db = client[db_name]
     return db
+

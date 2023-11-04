@@ -1,11 +1,7 @@
-from django.shortcuts import render, redirect, get_object_or_404
-from django.core.paginator import Paginator
-from quoteapp.models import Author, Tag, Quote
+import os
 
+os.environ['db_name'] = 'mongodb'
 
+var1 = os.getenv('db_name')
+print(var1)
 
-quotes = Quote.objects.all()
-
-for quote in quotes:
-    print (quote)
-    break
